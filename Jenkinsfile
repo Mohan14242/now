@@ -1,32 +1,31 @@
-pipeline {
+pipeline{
     agent any
-
-    stages {
-        stage('Parallel Build and Test') {
-            parallel {
-                // Build stage
-                stage('Build') {
-                    steps {
-                        echo "Building the application..."
-                        // Add your build commands here
-                    }
-                }
-                
-                // Test stage
-                stage('Test') {
-                    steps {
-                        echo "Running tests..."
-                        // Add your test commands here
-                    }
-                }
+    stages{
+        stage('build'){
+            steps{
+                echo "this is the building stage"
             }
         }
-        
-        stage('Deploy') {
-            steps {
-                echo "Deploying the application..."
-                // Add your deployment commands here
+        stage('test'){
+            steps{
+                echo 'thsi is the testing stage'
+            }
+
+        }
+        parallel{
+            stage('para'){
+                steps{
+                    echo "this is the parallel stage 1"
+                }
+            }
+            stage('para2'){
+                steps{
+                    echo "thsi is the parallelstage 2"
+                }
             }
         }
     }
+
 }
+
+ 
