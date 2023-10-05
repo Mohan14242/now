@@ -23,5 +23,19 @@ pipeline {
                 // Passwords are not printed for security reasons
             }
         }
+        stage('deply'){
+            input{ 
+                message "should i continue"
+                ok "yes we should"
+                submitter "mohan chiru"
+                parameters{
+                    string(name:"person",defaultValue:"mohan",description:"who should i say hello")
+                }
+            }
+            steps{
+                echo " hell ${person}"
+            }
+        }
     }
+
 }
