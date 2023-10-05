@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    triggers{
-        cron('* * * * *')
-    }
+    
 
     parameters {
         string(name: 'person', defaultValue: 'mr mohan', description: 'Who should I say hello to')
