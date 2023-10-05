@@ -33,7 +33,18 @@ pipeline {
             steps{
                 echo " hell ${person}"
             }
+
+
         }
+        stage('proddeply'){
+            when{
+                branch 'master'
+            }
+            steps{
+                echo "deploying to the main production"
+            }
+        }
+
     }
 
 }
