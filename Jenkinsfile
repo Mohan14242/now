@@ -1,31 +1,28 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('build'){
-            steps{
-                echo "this is the building stage"
+    stages {
+        stage('build') {
+            steps {
+                echo "This is the building stage"
             }
         }
-        stage('test'){
-            steps{
-                echo 'thsi is the testing stage'
+        stage('test') {
+            steps {
+                echo 'This is the testing stage'
             }
-
         }
-        parallel{
-            stage('para'){
-                steps{
-                    echo "this is the parallel stage 1"
+        parallel {
+            stage('para') {
+                steps {
+                    echo "This is parallel stage 1"
                 }
             }
-            stage('para2'){
-                steps{
-                    echo "thsi is the parallelstage 2"
+            stage('para2') {
+                steps {
+                    echo "This is parallel stage 2"
                 }
             }
         }
     }
-
 }
 
- 
