@@ -38,7 +38,7 @@ pipeline {
         }
         stage('proddeply'){
             when{
-                branch 'master'
+                branch 'origin/master'
             }
             steps{
                 echo "deploying to the main production"
